@@ -68,8 +68,8 @@ class MOTriggerRegister(BaseModel):
     class Config:
         schema_extra = {
             "example": {
-                "event_type": 0,
-                "request_type": 0,
+                "event_type": "ON_BEFORE",
+                "request_type": "CREATE",
                 "role_type": "org_unit",
                 "url": "/triggers/ou/create",
                 "timeout": 60,
