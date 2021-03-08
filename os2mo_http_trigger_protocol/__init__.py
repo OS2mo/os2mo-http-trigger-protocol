@@ -31,6 +31,7 @@ class RequestType(str, AutoNameEnum):
     CREATE: str = auto()
     EDIT: str = auto()
     TERMINATE: str = auto()
+    REFRESH: str = auto()
 
 
 class MOTriggerPayload(BaseModel):
