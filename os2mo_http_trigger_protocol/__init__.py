@@ -3,14 +3,17 @@
 # SPDX-License-Identifier: MPL-2.0
 
 from enum import Enum, auto, unique
-from typing import Dict, Optional
+from typing import Any, Dict, List, Optional, cast
 from uuid import UUID
 
 from pydantic import BaseModel
 
 
 class AutoNameEnum(Enum):
-    def _generate_next_value_(name, start, count, last_values):
+    @staticmethod
+    def _generate_next_value_(
+        name: Any, start: int, count: int, last_values: List[Any]
+    ) -> str:
         return name
 
 
@@ -21,8 +24,8 @@ class EventType(str, AutoNameEnum):
     EventType for trigger registry
     """
 
-    ON_BEFORE: str = auto()
-    ON_AFTER: str = auto()
+    ON_BEFORE: str = cast(str, auto())
+    ON_AFTER: str = cast(str, auto())
 
 
 @unique
@@ -32,10 +35,10 @@ class RequestType(str, AutoNameEnum):
     Support requests for :class:`RequestHandler`.
     """
 
-    CREATE: str = auto()
-    EDIT: str = auto()
-    TERMINATE: str = auto()
-    REFRESH: str = auto()
+    CREATE: str = cast(str, auto())
+    EDIT: str = cast(str, auto())
+    TERMINATE: str = cast(str, auto())
+    REFRESH: str = cast(str, auto())
 
 
 class MOTriggerPayload(BaseModel):
