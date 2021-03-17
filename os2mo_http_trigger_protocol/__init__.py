@@ -2,9 +2,9 @@
 #
 # SPDX-License-Identifier: MPL-2.0
 
-from uuid import UUID
-from typing import Dict, Optional
 from enum import Enum, auto, unique
+from typing import Dict, Optional
+from uuid import UUID
 
 from pydantic import BaseModel
 
