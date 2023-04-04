@@ -40,6 +40,7 @@ setuptools.setup(
             'twine',
         ],
     },
+    package_data={"os2mo_http_trigger_protocol": ["py.typed"]},
     packages=setuptools.find_packages(),
     python_requires='>=3.6',
 )
